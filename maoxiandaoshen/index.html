@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>冒险岛神射手-职业详解、加点攻略与装备搭配指南</title>
+    <meta name="description" content="本站提供冒险岛神射手职业的全面深度解析，包含技能加点方案、装备推荐、属性配比及练级路线图，助您打造最强神射手。">
+    <meta name="keywords" content="冒险岛神射手,冒险岛职业攻略,神射手加点,冒险岛装备推荐,冒险岛练级">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff7f27; /* 经典橙色 */
+            --secondary-color: #2c3e50;
+            --accent-color: #3498db;
+            --bg-light: #f4f6f9;
+            --bg-white: #ffffff;
+            --text-dark: #333333;
+            --text-gray: #666666;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--bg-white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--secondary-color);
+            font-size: 1rem;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .cta-button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .cta-button:hover {
+            background-color: #e06b1e;
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffffff 100%);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            margin-bottom: 40px;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item h3 {
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        /* Section Styles */
+        section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--primary-color);
+            display: inline-block;
+        }
+
+        /* Skill Cards */
+        .skill-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: var(--bg-white);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+            border-top: 4px solid transparent;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-card.legendary {
+            border-top-color: #ffd700;
+        }
+
+        .skill-card.epic {
+            border-top-color: #9b59b6;
+        }
+
+        .skill-card.rare {
+            border-top-color: var(--primary-color);
+        }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .skill-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .skill-level {
+            font-size: 0.85rem;
+            background: #eee;
+            padding: 2px 8px;
+            border-radius: 4px;
+            color: #666;
+        }
+
+        .skill-desc {
+            font-size: 0.95rem;
+            color: var(--text-gray);
+            margin-bottom: 15px;
+        }
+
+        .skill-type {
+            display: inline-block;
+            font-size: 0.8rem;
+            padding: 4px 8px;
+            border-radius: 4px;
+            background-color: #e8f4fd;
+            color: var(--accent-color);
+        }
+
+        /* Attribute Guide */
+        .attribute-box {
+            background: var(--bg-white);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .attr-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .attr-row:last-child {
+            border-bottom: none;
+        }
+
+        .attr-label {
+            font-weight: 600;
+        }
+
+        .attr-value {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .attr-tip {
+            font-size: 0.85rem;
+            color: #888;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        /* Equipment Table */
+        .equip-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--bg-white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .equip-table th, .equip-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .equip-table th {
+            background-color: #f8f9fa;
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+
+        .equip-table tr:hover {
+            background-color: #fafafa;
+        }
+
+        /* FAQ Section */
+        .faq-list {
+            background: var(--bg-white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            background: #fff;
+            transition: background 0.2s;
+        }
+
+        .faq-question:hover {
+            background-color: #f9f9f9;
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px 20px;
+            color: var(--text-gray);
+            display: none;
+            font-size: 0.95rem;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: #bdc3c7;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #34495e;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                height: auto;
+                padding: 15px;
+            }
+            
+            nav ul {
+                gap: 15px;
+                margin: 15px 0;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-stats {
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <span>冒险</span>岛攻略网
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">职业首页</a></li>
+                    <li><a href="#">加点模拟</a></li>
+                    <li><a href="#">装备库</a></li>
+                    <li><a href="#">社区讨论</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="cta-button">加入公会</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>掌握精准与力量，<br>成为<span>冒险岛神射手</span>的精英</h1>
+                <p>神射手是冒险岛中远程物理输出的代表，以极高的射速和爆发力著称。本站为您提供最全的职业定位、技能加点方案及装备搭配指南。</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>20</h3>
+                        <p>基础射程距离</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>3</h3>
+                        <p>主力输出系</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>∞</h3>
+                        <p>成长潜力</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Left Column -->
+            <div class="content-area">
+                
+                <!-- Skill Analysis -->
+                <section>
+                    <h2 class="section-title">核心技能解析</h2>
+                    <div class="skill-grid">
+                        <!-- Legendary Skill -->
+                        <article class="skill-card legendary">
+                            <div class="skill-header">
+                                <span class="skill-name">箭雨风暴</span>
+                                <span class="skill-level">被动</span>
+                            </div>
+                            <p class="skill-desc">提升攻击力与暴击率，每次攻击有几率触发多重箭雨，是神射手中期转型的关键技能。</p>
+                            <span class="skill-type">主动 / 范围伤害</span>
+                        </article>
+
+                        <!-- Epic Skill -->
+                        <article class="skill-card epic">
+                            <div class="skill-header">
+                                <span class="skill-name">鹰眼术</span>
+                                <span class="skill-level">被动</span>
+                            </div>
+                            <p class="skill-desc">大幅增加攻击力，并使远程攻击无视一定比例的防御力。神射手的核心伤害来源。</p>
+                            <span class="skill-type">被动 / 增益</span>
+                        </article>
+
+                        <!-- Rare Skill -->
+                        <article class="skill-card rare">
+                            <div class="skill-header">
+                                <span class="skill-name">急速射击</span>
+                                <span class="skill-level">主动</span>
+                            </div>
+                            <p class="skill-desc">短时间内大幅提升攻击速度，并在移动中保持高速射击，适合跑图和清怪。</p>
+                            <span class="skill-type">主动 / 爆发</span>
+                        </article>
+
+                        <!-- Standard Skill -->
+                        <article class="skill-card rare">
+                            <div class="skill-header">
+                                <span class="skill-name">多重箭</span>
+                                <span class="skill-level">主动</span>
+                            </div>
+                            <p class="skill-desc">向直线方向发射多支箭矢，对路径上的敌人造成伤害。新手时期最常用的技能。</p>
+                            <span class="skill-type">主动 / 直线</span>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Equipment Guide -->
+                <section>
+                    <h2 class="section-title">毕业装备推荐</h2>
+                    <p style="margin-bottom: 20px; color: #666;">以下为神射手在满级阶段的主流装备配置思路：</p>
+                    <table class="equip-table">
+                        <thead>
+                            <tr>
+                                <th>部位</th>
+                                <th>推荐装备类型</th>
+                                <th>关键属性</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>武器</td>
+                                <td>龙骨弓 / 神圣之弓</td>
+                                <td>攻击力 > 魔法攻击力 > 暴击伤害</td>
+                            </tr>
+                            <tr>
+                                <td>头盔</td>
+                                <td>龙骨头盔</td>
+                                <td>攻击力 > 力量 > 敏捷</td>
+                            </tr>
+                            <tr>
+                                <td>披风</td>
+                                <td>龙鳞披风</td>
+                                <td>攻击速度 > 暴击率 > 敏捷</td>
+                            </tr>
+                            <tr>
+                                <td>鞋子</td>
+                                <td>龙骨靴</td>
+                                <td>移动速度 > 攻击速度</td>
+                            </tr>
+                            <tr>
+                                <td>饰品</td>
+                                <td>龙之眼 / 神射手徽章</td>
+                                <td>暴击伤害 > 敏捷</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- FAQ Section -->
+                <section>
+                    <h2 class="section-title">常见问题 (FAQ)</h2>
+                    <div class="faq-list">
+                        <div class="faq-item">
+                            <div class="faq-question">神射手适合新手玩吗？</div>
+                            <div class="faq-answer">神射手上手难度适中，拥有远程攻击优势，在前期打怪升级效率较高，非常适合作为新手的入门职业。</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">主修哪个技能系？</div>
+                            <div class="faq-answer">建议主修【箭雨】系，该系技能拥有优秀的AOE（范围）伤害能力，适合应对多怪场景。</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">属性加点有什么讲究？</div>
+                            <div class="faq-answer">神射手主要依赖敏捷属性来提升命中率和攻击速度，力量次之。请确保敏捷比例达到标准以解锁技能。</div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Right Column -->
+            <aside class="sidebar">
+                <div class="attribute-box">
+                    <h3 class="section-title" style="font-size: 1.4rem; border: none; margin-bottom: 20px;">属性配比</h3>
+                    <div class="attr-row">
+                        <span class="attr-label">敏捷 (DEX)</span>
+                        <span class="attr-value">70% - 80%</span>
+                    </div>
+                    <div class="attr-row">
+                        <span class="attr-label">力量 (STR)</span>
+                        <span class="attr-value">10% - 20%</span>
+                    </div>
+                    <div class="attr-row">
+                        <span class="attr-label">智力 (INT)</span>
+                        <span class="attr-value">0% - 5%</span>
+                    </div>
+                    <div class="attr-row">
+                        <span class="attr-label">运气 (LUK)</span>
+                        <span class="attr-value">0% - 5%</span>
+                    </div>
+                    <p class="attr-tip">* 敏捷过低会导致攻击速度变慢，影响DPS输出。</p>
+                </div>
+
+                <div class="attribute-box" style="margin-top: 30px;">
+                    <h3 class="section-title" style="font-size: 1.4rem; border: none; margin-bottom: 20px;">练级路线</h3>
+                    <ul style="font-size: 0.95rem; color: #555;">
+                        <li style="margin-bottom: 15px; padding-left: 15px; border-left: 3px solid var(--primary-color);">
+                            <strong>1-30级：</strong> 扎昆村打蘑菇与史莱姆。
+                        </li>
+                        <li style="margin-bottom: 15px; padding-left: 15px; border-left: 3px solid var(--primary-color);">
+                            <strong>31-70级：</strong> 前往勇士部落，利用鹰眼术快速清怪。
+                        </li>
+                        <li style="margin-bottom: 15px; padding-left: 15px; border-left: 3px solid var(--primary-color);">
+                            <strong>71级+：</strong> 入驻玩具城或黑魔法师塔，挑战高阶副本。
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>关于攻略</h4>
+                <p style="font-size: 0.9rem;">本站致力于为冒险岛玩家提供最准确的职业攻略、数据分析和装备参考。</p>
+            </div>
+            <div class="footer-col">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="#">职业大全</a></li>
+                    <li><a href="#">地图攻略</a></li>
+                    <li><a href="#">副本指南</a></li>
+                    <li><a href="#">经济系统</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>联系支持</h4>
+                <ul>
+                    <li><a href="#">提交Bug</a></li>
+                    <li><a href="#">投稿攻略</a></li>
+                    <li><a href="#">加入社区</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 冒险岛攻略网 版权所有.
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Toggle Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
