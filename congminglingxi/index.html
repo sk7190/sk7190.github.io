@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聪明灵犀 - 智能交互与效率提升指南</title>
+    <meta name="description" content="聪明灵犀为您提供全方位的AI智能工具评测、使用技巧、效率提升方案及未来趋势分析，助您在数字化时代保持领先。">
+    <meta name="keywords" content="聪明灵犀, AI工具, 效率提升, 智能助手, 在线工具">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #4f46e5;
+            --primary-hover: #4338ca;
+            --secondary-color: #10b981;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-secondary: #64748b;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+            --radius: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .cta-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: background-color 0.2s;
+        }
+
+        .cta-btn:hover {
+            background-color: var(--primary-hover);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            padding: 80px 0 60px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            color: var(--text-main);
+            letter-spacing: -0.02em;
+        }
+
+        .hero h1 span {
+            color: var(--primary-color);
+            background: linear-gradient(135deg, var(--primary-color) 0%, #818cf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .stat-item h3 {
+            font-size: 2rem;
+            color: var(--text-main);
+            font-weight: 800;
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        /* 核心功能网格 */
+        .features {
+            padding: 60px 0;
+            background-color: white;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--bg-color);
+            padding: 30px;
+            border-radius: var(--radius);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid var(--border-color);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #e0e7ff;
+            color: var(--primary-color);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.25rem;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* 工具分类 */
+        .tools-section {
+            padding: 80px 0;
+        }
+
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 10px 24px;
+            border: 1px solid var(--border-color);
+            background: white;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 500;
+            color: var(--text-secondary);
+            transition: all 0.2s;
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .tools-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .tool-card {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+            transition: box-shadow 0.2s;
+        }
+
+        .tool-card:hover {
+            box-shadow: var(--shadow-lg);
+        }
+
+        .tool-img-placeholder {
+            width: 100%;
+            height: 160px;
+            background-color: #cbd5e1;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tool-img-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .tool-card:hover .tool-img-placeholder img {
+            transform: scale(1.05);
+        }
+
+        .tool-content {
+            padding: 20px;
+        }
+
+        .tool-tag {
+            font-size: 0.75rem;
+            color: var(--primary-color);
+            background-color: #e0e7ff;
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .tool-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .tool-content p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+        }
+
+        .tool-link {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .tool-link::after {
+            content: '→';
+            margin-left: 5px;
+            transition: margin-left 0.2s;
+        }
+
+        .tool-link:hover::after {
+            margin-left: 10px;
+        }
+
+        /* 效率指南 */
+        .guide-section {
+            padding: 80px 0;
+            background-color: #1e1b4b;
+            color: white;
+        }
+
+        .guide-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .guide-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            line-height: 1.2;
+        }
+
+        .guide-content p {
+            color: #c7d2fe;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .check-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .check-icon {
+            color: var(--secondary-color);
+            flex-shrink: 0;
+            margin-top: 4px;
+        }
+
+        .guide-visual {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .visual-step {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        .step-num {
+            font-size: 2rem;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        .step-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .step-text p {
+            font-size: 0.9rem;
+            color: #c7d2fe;
+            margin: 0;
+        }
+
+        /* 常见问题 */
+        .faq-section {
+            padding: 80px 0;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            background: white;
+            transition: background 0.2s;
+        }
+
+        .faq-question:hover {
+            background-color: #f8fafc;
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            color: var(--text-secondary);
+            background-color: #f8fafc;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 20px;
+            max-height: 200px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .faq-icon {
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: white;
+            border-top: 1px solid var(--border-color);
+            padding: 60px 0 30px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand p {
+            color: var(--text-secondary);
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .guide-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .nav-inner {
+                padding: 0 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-inner">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"></path>
+                    <path d="M8.5 8.5v.01"></path>
+                    <path d="M16 12v.01"></path>
+                    <path d="M12 16v.01"></path>
+                </svg>
+                聪明灵犀<span>SmartLink</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#features" class="active">核心功能</a>
+                <a href="#tools">精选工具</a>
+                <a href="#guide">效率指南</a>
+                <a href="#faq">常见问题</a>
+            </nav>
+            <a href="#tools" class="cta-btn">开始体验</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>释放您的<span>聪明灵犀</span>，驾驭智能未来</h1>
+                <p>我们致力于整合最前沿的人工智能工具与交互技术，为您提供从创意生成到流程自动化的全链路解决方案。让每一次点击都充满智慧。</p>
+                <div style="margin-bottom: 30px;">
+                    <a href="#tools" class="cta-btn" style="padding: 15px 35px; font-size: 1.1rem;">探索工具库</a>
+                    <a href="#guide" style="margin-left: 15px; color: var(--primary-color); font-weight: 600;">了解如何使用 &rarr;</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>50+</h3>
+                        <p>智能模块</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>100W+</h3>
+                        <p>日均交互</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>4.9</h3>
+                        <p>用户评分</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="container">
+                <div class="section-header">
+                    <h2>为什么选择聪明灵犀？</h2>
+                    <p>不仅仅是工具，更是您的数字大脑助手，解决复杂问题，提升决策效率。</p>
+                </div>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>极速响应引擎</h3>
+                        <p>基于最新分布式架构，毫秒级处理复杂逻辑，确保您的每一次指令都能得到即时反馈，告别等待。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🧠</div>
+                        <h3>深度语义理解</h3>
+                        <p>超越关键词匹配，真正理解上下文语境。无论是模糊指令还是专业术语，都能精准捕捉您的意图。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔒</div>
+                        <h3>隐私安全守护</h3>
+                        <p>采用端到端加密技术，您的数据仅用于处理当前任务，绝不会用于模型训练或第三方共享。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎨</div>
+                        <h3>多模态创作</h3>
+                        <p>支持文本、图像、音频等多种模态的灵活切换。从撰写文案到生成视觉素材，一气呵成。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🤖</div>
+                        <h3>自定义工作流</h3>
+                        <p>允许用户通过简单的拖拽配置复杂的自动化流程，将重复性劳动交给聪明灵犀，专注于核心创新。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3>智能数据分析</h3>
+                        <p>自动生成可视化报表，从杂乱的数据中提炼关键洞察，辅助您做出更明智的商业决策。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tools" class="tools-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>热门智能工具</h2>
+                    <p>根据不同场景需求，精选了当前最实用的智能应用。</p>
+                </div>
+                <div class="category-tabs">
+                    <button class="tab-btn active" onclick="filterTools('all')">全部</button>
+                    <button class="tab-btn" onclick="filterTools('writing')">文案写作</button>
+                    <button class="tab-btn" onclick="filterTools('image')">图像设计</button>
+                    <button class="tab-btn" onclick="filterTools('coding')">编程辅助</button>
+                    <button class="tab-btn" onclick="filterTools('audio')">语音交互</button>
+                </div>
+                <div class="tools-list">
+                    <article class="tool-card" data-category="writing">
+                        <div class="tool-img-placeholder">
+                            <img src="https://picsum.photos/seed/writing/400/300" alt="文案生成器">
+                        </div>
+                        <div class="tool-content">
+                            <span class="tool-tag">文案写作</span>
+                            <h3>灵感风暴写作</h3>
+                            <p>自动生成SEO优化文章大纲、营销文案及社交媒体帖子，提升内容产出效率。</p>
+                            <a href="#" class="tool-link">立即使用</a>
+                        </div>
+                    </article>
+                    <article class="tool-card" data-category="image">
+                        <div class="tool-img-placeholder">
+                            <img src="https://picsum.photos/seed/art/400/300" alt="AI 绘图">
+                        </div>
+                        <div class="tool-content">
+                            <span class="tool-tag">图像设计</span>
+                            <h3>像素级绘图助手</h3>
+                            <p>输入描述即可生成高质量插画、Logo及产品渲染图，满足创意设计需求。</p>
+                            <a href="#" class="tool-link">立即使用</a>
+                        </div>
+                    </article>
+                    <article class="tool-card" data-category="coding">
+                        <div class="tool-img-placeholder">
+                            <img src="https://picsum.photos/seed/code/400/300" alt="代码补全">
+                        </div>
+                        <div class="tool-content">
+                            <span class="tool-tag">编程辅助</span>
+                            <h3>智能代码补全</h3>
+                            <p>支持多语言实时代码补全与错误诊断，帮助开发者快速构建稳定应用。</p>
+                            <a href="#" class="tool-link">立即使用</a>
+                        </div>
+                    </article>
+                    <article class="tool-card" data-category="audio">
+                        <div class="tool-img-placeholder">
+                            <img src="https://picsum.photos/seed/audio/400/300" alt="语音转写">
+                        </div>
+                        <div class="tool-content">
+                            <span class="tool-tag">语音交互</span>
+                            <h3>多语言实时转写</h3>
+                            <p>支持全球主要语言的实时语音识别与翻译，会议记录与采访整理神器。</p>
+                            <a href="#" class="tool-link">立即使用</a>
+                        </div>
+                    </article>
+                    <article class="tool-card" data-category="writing">
+                        <div class="tool-img-placeholder">
+                            <img src="https://picsum.photos/seed/email/400/300" alt="邮件助手">
+                        </div>
+                        <div class="tool-content">
+                            <span class="tool-tag">文案写作</span>
+                            <h3>专业邮件润色</h3>
+                            <p>将口语化的草稿转化为专业、得体的商务邮件，提升沟通成功率。</p>
+                            <a href="#" class="tool-link">立即使用</a>
+                        </div>
+                    </article>
+                    <article class="tool-card" data-category="image">
+                        <div class="tool-img-placeholder">
+                            <img src="https://picsum.photos/seed/design/400/300" alt="图片修复">
+                        </div>
+                        <div class="tool-content">
+                            <span class="tool-tag">图像设计</span>
+                            <h3>老照片修复增强</h3>
+                            <p>利用AI算法修复模糊、破损的老照片，并进行智能上色与高清放大。</p>
+                            <a href="#" class="tool-link">立即使用</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="guide" class="guide-section">
+            <div class="container">
+                <div class="guide-grid">
+                    <div class="guide-content">
+                        <h2>如何开启您的<br>智能效率之旅</h2>
+                        <p>聪明灵犀的设计哲学是“简单、强大、透明”。只需三步，即可将AI能力融入您的工作流。</p>
+                        <ul class="check-list">
+                            <li>
+                                <span class="check-icon">✓</span>
+                                <div>
+                                    <h4>连接账户</h4>
+                                    <p>支持多种主流平台的OAuth安全登录，无需繁琐配置。</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="check-icon">✓</span>
+                                <div>
+                                    <h4>选择场景</h4>
+                                    <p>根据您的具体需求（如写作、设计、分析）选择预设模板。</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="check-icon">✓</span>
+                                <div>
+                                    <h4>获取结果</h4>
+                                    <p>一键生成高质量内容，支持导出、编辑及二次创作。</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <br>
+                        <a href="#" class="cta-btn" style="background: white; color: var(--primary-color);">查看完整教程</a>
+                    </div>
+                    <div class="guide-visual">
+                        <div class="visual-step">
+                            <div class="step-num">01</div>
+                            <div class="step-text">
+                                <h4>输入指令</h4>
+                                <p>在对话框中清晰描述您的需求。</p>
+                            </div>
+                        </div>
+                        <div class="visual-step">
+                            <div class="step-num">02</div>
+                            <div class="step-text">
+                                <h4>智能处理</h4>
+                                <p>系统自动分析并调用最佳模型。</p>
+                            </div>
+                        </div>
+                        <div class="visual-step">
+                            <div class="step-num">03</div>
+                            <div class="step-text">
+                                <h4>输出成果</h4>
+                                <p>即时获得优化后的专业结果。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="faq-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>常见问题解答</h2>
+                    <p>关于聪明灵犀的使用、定价及技术细节，这里都有答案。</p>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            聪明灵犀的免费版有什么限制？
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            免费版用户每天享有有限次数的生成额度，支持基础文本处理。升级至专业版后可解锁无限次调用及高级模型访问权限。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            我的数据会被用于训练吗？
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            不会。我们承诺保护用户隐私，您的输入数据仅在当前会话中用于生成结果，且不会用于任何形式的模型训练或数据留存。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            支持哪些语言？
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            目前支持中文、英文、日文、法文、西班牙文等超过20种主流语言的实时交互与翻译。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            如何联系技术支持？
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            您可以通过页面底部的“联系我们”表单提交工单，或发送邮件至 support@smartlink-demo.com，我们会在24小时内回复。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"></path>
+                        </svg>
+                        聪明灵犀
+                    </a>
+                    <p>致力于打造最人性化的智能交互体验，让科技真正服务于人的创造力。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>产品</h4>
+                    <ul>
+                        <li><a href="#">核心功能</a></li>
+                        <li><a href="#">定价方案</a></li>
+                        <li><a href="#">API文档</a></li>
+                        <li><a href="#">更新日志</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>资源</h4>
+                    <ul>
+                        <li><a href="#">使用指南</a></li>
+                        <li><a href="#">博客文章</a></li>
+                        <li><a href="#">社区论坛</a></li>
+                        <li><a href="#">帮助中心</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>公司</h4>
+                    <ul>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">加入我们</a></li>
+                        <li><a href="#">联系方式</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 聪明灵犀智能科技. 保留所有权利。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 工具分类筛选逻辑
+        function filterTools(category) {
+            const cards = document.querySelectorAll('.tool-card');
+            const buttons = document.querySelectorAll('.tab-btn');
+
+            // 更新按钮状态
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.innerText === getCategoryName(category)) {
+                    btn.classList.add('active');
+                }
+            });
+
+            // 筛选卡片
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'block';
+                    card.style.animation = 'fadeIn 0.5s ease';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function getCategoryName(cat) {
+            const map = {
+                'writing': '文案写作',
+                'image': '图像设计',
+                'coding': '编程辅助',
+                'audio': '语音交互'
+            };
+            return map[cat] || '全部';
+        }
+
+        // FAQ 手风琴效果
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                
+                // 关闭所有其他项
+                faqItems.forEach(otherItem => {
+                    otherItem.classList.remove('active');
+                });
+
+                // 如果刚才没打开，则打开当前项
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // 简单的淡入动画
+        const style = document.createElement('style');
+        style.innerHTML = `
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(10px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+  </html>
