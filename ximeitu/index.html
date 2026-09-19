@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="嬉美图 - 提供精选高清美图、时尚摄影与视觉艺术分享平台。探索最新潮流图片、摄影作品及设计灵感，发现生活中的美学瞬间。">
+    <meta name="keywords" content="嬉美图,高清美图,摄影作品,视觉艺术,设计灵感,美图欣赏">
+    <title>嬉美图-精选高清美图与视觉艺术分享平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff4757;
+            --secondary-color: #2f3542;
+            --accent-color: #5352ed;
+            --bg-color: #f1f2f6;
+            --card-bg: #ffffff;
+            --text-main: #2f3542;
+            --text-light: #747d8c;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--secondary-color);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -24px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: var(--bg-color);
+            padding: 8px 16px;
+            border-radius: 20px;
+            width: 300px;
+        }
+
+        .search-box input {
+            border: none;
+            background: transparent;
+            outline: none;
+            width: 100%;
+            margin-left: 8px;
+            color: var(--text-main);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 16px;
+            color: var(--secondary-color);
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-main);
+            margin-bottom: 32px;
+            opacity: 0.9;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255,255,255,0.6);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            cursor: pointer;
+            border: 1px solid rgba(255,255,255,0.4);
+        }
+
+        .tag:hover {
+            background: white;
+            transform: translateY(-2px);
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 32px;
+        }
+
+        /* Gallery Grid */
+        .gallery-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 24px;
+            padding-left: 12px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #ddd;
+        }
+
+        .card-body {
+            padding: 16px;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .card-actions {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .card:hover .card-actions {
+            opacity: 1;
+        }
+
+        .action-btn {
+            background: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .action-btn:hover {
+            background: var(--primary-color);
+        }
+
+        /* Sidebar */
+        aside h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .category-list li {
+            margin-bottom: 12px;
+        }
+
+        .category-list a {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-main);
+            padding: 8px 12px;
+            border-radius: var(--radius-md);
+        }
+
+        .category-list a:hover {
+            background-color: #eccc68;
+            color: white;
+        }
+
+        .count {
+            background: rgba(0,0,0,0.1);
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+        }
+
+        .hot-list li {
+            margin-bottom: 16px;
+            display: flex;
+            align-items: start;
+            gap: 10px;
+        }
+
+        .hot-list .rank {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #ddd;
+            line-height: 1;
+            min-width: 24px;
+        }
+
+        .hot-list .rank.top-1 { color: #ff4757; }
+        .hot-list .rank.top-2 { color: #ffa502; }
+        .hot-list .rank.top-3 { color: #2ed573; }
+
+        .hot-list a {
+            font-size: 0.95rem;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 60px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a {
+            color: #a4b0be;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #a4b0be;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 16px;
+                gap: 16px;
+            }
+
+            nav ul {
+                gap: 16px;
+                font-size: 0.9rem;
+            }
+
+            .search-box {
+                width: 100%;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                    <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                    <path d="M2 2l7.586 7.586"></path>
+                    <circle cx="11" cy="11" r="2"></circle>
+                </svg>
+                嬉美图
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">摄影精选</a></li>
+                    <li><a href="#">设计灵感</a></li>
+                    <li><a href="#">壁纸图库</a></li>
+                    <li><a href="#">社区话题</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #999;">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input type="text" placeholder="搜索高清美图、摄影师或风格...">
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>发现生活中的美学瞬间</h1>
+            <p>汇聚全球优质摄影师作品，每日更新精选美图，为您提供最纯粹的视觉享受与设计灵感。</p>
+            <div class="hero-tags">
+                <span class="tag">人像摄影</span>
+                <span class="tag">风景壁纸</span>
+                <span class="tag">极简设计</span>
+                <span class="tag">胶片质感</span>
+                <span class="tag">赛博朋克</span>
+                <span class="tag">静物美学</span>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <!-- Main Content Area -->
+        <section class="gallery-section">
+            <h2>今日推荐</h2>
+            <div class="gallery-grid">
+                <!-- Card 1 -->
+                <article class="card">
+                    <div class="card-actions">
+                        <button class="action-btn" title="收藏">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                        </button>
+                        <button class="action-btn" title="下载">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                        </button>
+                    </div>
+                    <img src="https://picsum.photos/seed/art1/400/300" alt="抽象光影艺术" class="card-image">
+                    <div class="card-body">
+                        <h3 class="card-title">城市黄昏下的抽象光影</h3>
+                        <div class="card-meta">
+                            <span>摄影师: Alex Chen</span>
+                            <span>1.2k 喜欢</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="card">
+                    <div class="card-actions">
+                        <button class="action-btn" title="收藏"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                        <button class="action-btn" title="下载"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></button>
+                    </div>
+                    <img src="https://picsum.photos/seed/art2/400/300" alt="静谧自然风光" class="card-image">
+                    <div class="card-body">
+                        <h3 class="card-title">阿尔卑斯山脉的静谧晨曦</h3>
+                        <div class="card-meta">
+                            <span>摄影师: Sarah Lee</span>
+                            <span>856 喜欢</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="card">
+                    <div class="card-actions">
+                        <button class="action-btn" title="收藏"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                        <button class="action-btn" title="下载"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></button>
+                    </div>
+                    <img src="https://picsum.photos/seed/art3/400/300" alt="极简主义室内设计" class="card-image">
+                    <div class="card-body">
+                        <h3 class="card-title">北欧极简主义家居空间</h3>
+                        <div class="card-meta">
+                            <span>设计师: Studio M</span>
+                            <span>2.1k 喜欢</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 4 -->
+                <article class="card">
+                    <div class="card-actions">
+                        <button class="action-btn" title="收藏"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                        <button class="action-btn" title="下载"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></button>
+                    </div>
+                    <img src="https://picsum.photos/seed/art4/400/300" alt="复古胶片质感" class="card-image">
+                    <div class="card-body">
+                        <h3 class="card-title">复古胶片风格的街拍记录</h3>
+                        <div class="card-meta">
+                            <span>摄影师: OldFilm</span>
+                            <span>3.4k 喜欢</span>
+                        </div>
+                    </div>
+                </article>
+                
+                 <!-- Card 5 -->
+                 <article class="card">
+                    <div class="card-actions">
+                        <button class="action-btn" title="收藏"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                        <button class="action-btn" title="下载"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></button>
+                    </div>
+                    <img src="https://picsum.photos/seed/art5/400/300" alt="数字艺术插画" class="card-image">
+                    <div class="card-body">
+                        <h3 class="card-title">未来主义数字艺术插画</h3>
+                        <div class="card-meta">
+                            <span>画师: NeonDream</span>
+                            <span>1.8k 喜欢</span>
+                        </div>
+                    </div>
+                </article>
+
+                 <!-- Card 6 -->
+                 <article class="card">
+                    <div class="card-actions">
+                        <button class="action-btn" title="收藏"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                        <button class="action-btn" title="下载"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></button>
+                    </div>
+                    <img src="https://picsum.photos/seed/art6/400/300" alt="微距摄影" class="card-image">
+                    <div class="card-body">
+                        <h3 class="card-title">微观世界：露珠与花瓣</h3>
+                        <div class="card-meta">
+                            <span>摄影师: NatureLens</span>
+                            <span>920 喜欢</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Sidebar -->
+        <aside>
+            <div class="sidebar-block">
+                <h3>热门分类</h3>
+                <ul class="category-list">
+                    <li><a href="#">人像写真 <span class="count">2.3k</span></a></li>
+                    <li><a href="#">风景风光 <span class="count">1.8k</span></a></li>
+                    <li><a href="#">建筑摄影 <span class="count">950</span></a></li>
+                    <li><a href="#">美食摄影 <span class="count">1.1k</span></a></li>
+                    <li><a href="#">创意合成 <span class="count">840</span></a></li>
+                    <li><a href="#">黑白摄影 <span class="count">1.5k</span></a></li>
+                    <li><a href="#">生活记录 <span class="count">2.0k</span></a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-block" style="margin-top: 32px;">
+                <h3>本周热门</h3>
+                <ul class="hot-list">
+                    <li>
+                        <span class="rank top-1">1</span>
+                        <a href="#">东京街头的霓虹光影与赛博朋克美学</a>
+                    </li>
+                    <li>
+                        <span class="rank top-2">2</span>
+                        <a href="#">如何利用自然光拍出高级感的人像照片</a>
+                    </li>
+                    <li>
+                        <span class="rank top-3">3</span>
+                        <a href="#">极简主义配色方案在UI设计中的应用</a>
+                    </li>
+                    <li>
+                        <span class="rank">4</span>
+                        <a href="#">2024年最流行的摄影滤镜推荐与调色教程</a>
+                    </li>
+                    <li>
+                        <span class="rank">5</span>
+                        <a href="#">探索非洲大草原的野生动物摄影技巧</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-block" style="margin-top: 32px; background: #fff; padding: 20px; border-radius: var(--radius-md); text-align: center;">
+                <h4 style="margin-bottom: 12px;">加入我们的社区</h4>
+                <p style="font-size: 0.9rem; color: #666; margin-bottom: 16px;">上传您的作品，与全球摄影师交流灵感，获取更多曝光机会。</p>
+                <button style="background: var(--primary-color); color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; font-weight: 600;">立即注册</button>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>关于嬉美图</h4>
+                <p style="color: #a4b0be; font-size: 0.9rem; line-height: 1.6;">
+                    嬉美图致力于为摄影爱好者和设计专业人士提供一个高质量、高效率的图片分享与灵感平台。我们精选全球优质视觉内容，助您发现美、创造美。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>探索栏目</h4>
+                <ul>
+                    <li><a href="#">最新上传</a></li>
+                    <li><a href="#">热门榜单</a></li>
+                    <li><a href="#">摄影教程</a></li>
+                    <li><a href="#">设计资源</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>帮助中心</h4>
+                <ul>
+                    <li><a href="#">投稿指南</a></li>
+                    <li><a href="#">版权声明</a></li>
+                    <li><a href="#">用户协议</a></li>
+                    <li><a href="#">联系客服</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>关注我们</h4>
+                <ul>
+                    <li><a href="#">微信公众号</a></li>
+                    <li><a href="#">微博话题</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 嬉美图 版权所有. All Rights Reserved.
+        </div>
+    </footer>
+
+</body>
+                                              </html>
