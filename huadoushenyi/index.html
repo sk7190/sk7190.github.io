@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>花都神医-都市玄幻医武小说在线阅读与剧情解析</title>
+    <meta name="description" content="花都神医小说在线阅读平台，提供花都神医最新章节、全集免费阅读、人物关系图谱及剧情简介。深入解析主角神医手段与都市生活冲突。">
+    <meta name="keywords" content="花都神医,花都神医小说,花都神医在线阅读,都市神医小说,小说排行榜">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d4a017;
+            --secondary-color: #1a1a1a;
+            --text-color: #333;
+            --light-text: #666;
+            --bg-color: #f9f9f9;
+            --card-bg: #ffffff;
+            --spacing: 20px;
+            --border-radius: 8px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            font-size: 1rem;
+            color: var(--secondary-color);
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .search-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 30px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #b8860b;
+            transform: translateY(-2px);
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .section-title a {
+            font-size: 0.9rem;
+            color: var(--light-text);
+            font-weight: normal;
+        }
+
+        .section-title a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Grid System */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        /* Card Styles */
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .card-cover {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            background-color: #eee;
+        }
+
+        .card-body {
+            padding: 15px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+
+        .card-title:hover {
+            color: var(--primary-color);
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--light-text);
+            margin-bottom: 15px;
+            flex: 1;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #999;
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+        }
+
+        .tag {
+            background-color: #f0f0f0;
+            padding: 2px 8px;
+            border-radius: 4px;
+            color: #666;
+            font-size: 0.8rem;
+        }
+
+        /* Chapter List */
+        .chapter-list {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .chapter-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .chapter-item:last-child {
+            border-bottom: none;
+        }
+
+        .chapter-item a {
+            color: var(--text-color);
+            transition: var(--transition);
+        }
+
+        .chapter-item a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+
+        .chapter-date {
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        /* Info Section */
+        .info-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        .info-card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .info-row {
+            margin-bottom: 15px;
+        }
+
+        .info-label {
+            font-weight: bold;
+            color: var(--secondary-color);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .widget-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-color);
+            display: inline-block;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: #ccc;
+            padding: 40px 20px 20px;
+            margin-top: 50px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-col h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 10px;
+            }
+            
+            nav ul {
+                margin-top: 10px;
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .info-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="nav-container">
+        <a href="#" class="logo">花都神医<span>小说网</span></a>
+        <nav>
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#ranking">排行榜</a></li>
+                <li><a href="#latest">最新章节</a></li>
+                <li><a href="#about">作者简介</a></li>
+            </ul>
+        </nav>
+        <button class="search-btn">🔍</button>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>都市医武巅峰</h1>
+            <p>看主角如何以绝世医术纵横花都，在豪门恩怨与都市修真中谱写传奇。</p>
+            <button class="btn">立即阅读</button>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Main Content Area -->
+        <div class="info-layout">
+            <!-- Left Column: Info & Chapters -->
+            <div class="main-col">
+                <!-- Book Info -->
+                <article class="info-card">
+                    <h1 style="font-size: 1.8rem; margin-bottom: 15px; color: #333;">花都神医</h1>
+                    <div class="info-row">
+                        <span class="info-label">作者：</span>
+                        <span>佚名（经典都市文）</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">分类：</span>
+                        <span>都市修真 / 医道 / 豪门</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">状态：</span>
+                        <span>连载中</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">简介：</span>
+                        <p style="color: #666; margin-top: 5px;">
+                            神医下山，入赘豪门。看似普通的赘婿，实则身怀绝世医术与神秘背景。在花都的繁华都市中，他以医道救人，以武力护道，化解家族恩怨，打脸极品亲戚，征服各路美女，最终成为都市神话。
+                        </p>
+                    </div>
+                    <div class="info-row" style="margin-top: 20px;">
+                        <button class="btn" style="padding: 8px 25px; font-size: 0.9rem;">开始阅读</button>
+                        <button class="btn" style="padding: 8px 25px; font-size: 0.9rem; background-color: #555; margin-left: 10px;">加入书架</button>
+                    </div>
+                </article>
+
+                <!-- Latest Chapters -->
+                <section id="latest" style="margin-top: 30px;">
+                    <div class="section-title">
+                        <span>最新章节</span>
+                        <a href="#">查看更多 &gt;</a>
+                    </div>
+                    <div class="chapter-list">
+                        <div class="chapter-item">
+                            <a href="#">第2452章 惊天反转</a>
+                            <span class="chapter-date">01-15</span>
+                        </div>
+                        <div class="chapter-item">
+                            <a href="#">第2451章 绝境逢生</a>
+                            <span class="chapter-date">01-14</span>
+                        </div>
+                        <div class="chapter-item">
+                            <a href="#">第2450章 最后的底牌</a>
+                            <span class="chapter-date">01-13</span>
+                        </div>
+                        <div class="chapter-item">
+                            <a href="#">第2449章 血脉觉醒</a>
+                            <span class="chapter-date">01-12</span>
+                        </div>
+                        <div class="chapter-item">
+                            <a href="#">第2448章 隐世家族</a>
+                            <span class="chapter-date">01-11</span>
+                        </div>
+                        <div class="chapter-item">
+                            <a href="#">第2447章 暗流涌动</a>
+                            <span class="chapter-date">01-10</span>
+                        </div>
+                        <div class="chapter-item">
+                            <a href="#">第2446章 重回帝都</a>
+                            <span class="chapter-date">01-09</span>
+                        </div>
+                        <div class="chapter-item">
+                            <a href="#">第2445章 故人重逢</a>
+                            <span class="chapter-date">01-08</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Column: Sidebar -->
+            <aside class="sidebar">
+                <!-- Ranking Widget -->
+                <div id="ranking" class="sidebar-widget">
+                    <h3 class="widget-title">热门榜单</h3>
+                    <ul style="font-size: 0.95rem;">
+                        <li style="margin-bottom: 10px; display: flex; justify-content: space-between;">
+                            <a href="#">1. 神医弃少</a>
+                            <span class="tag">98.2%</span>
+                        </li>
+                        <li style="margin-bottom: 10px; display: flex; justify-content: space-between;">
+                            <a href="#">2. 极品透视眼</a>
+                            <span class="tag">96.5%</span>
+                        </li>
+                        <li style="margin-bottom: 10px; display: flex; justify-content: space-between;">
+                            <a href="#">3. 暗夜之王</a>
+                            <span class="tag">95.1%</span>
+                        </li>
+                        <li style="margin-bottom: 10px; display: flex; justify-content: space-between;">
+                            <a href="#">4. 天才相师</a>
+                            <span class="tag">94.8%</span>
+                        </li>
+                        <li style="margin-bottom: 10px; display: flex; justify-content: space-between;">
+                            <a href="#">5. 超级兵王</a>
+                            <span class="tag">93.2%</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Recommendation Widget -->
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">猜你喜欢</h3>
+                    <div class="grid-2" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                        <div class="card">
+                            <div class="card-body" style="padding: 10px;">
+                                <div class="card-title" style="font-size: 0.95rem; margin-bottom: 5px;">都市最强兵王</div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body" style="padding: 10px;">
+                                <div class="card-title" style="font-size: 0.95rem; margin-bottom: 5px;">绝世高手在都市</div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body" style="padding: 10px;">
+                                <div class="card-title" style="font-size: 0.95rem; margin-bottom: 5px;">最强医圣</div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body" style="padding: 10px;">
+                                <div class="card-title" style="font-size: 0.95rem; margin-bottom: 5px;">神级龙卫</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ad Placeholder -->
+                <div style="background: #ddd; height: 250px; display: flex; align-items: center; justify-content: center; color: #666; border-radius: 8px;">
+                    广告位
+                </div>
+            </aside>
+        </div>
+
+        <!-- Content Sections -->
+        <section style="margin-top: 50px;">
+            <div class="section-title">
+                <span>剧情解析与看点</span>
+            </div>
+            <div class="grid-3">
+                <article class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">医术高明</h3>
+                        <p class="card-desc">主角拥有起死回生的医术，从治疗绝症到重塑经脉，展现了中医的博大精深与神奇力量。</p>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">豪门恩怨</h3>
+                        <p class="card-desc">入赘豪门后的种种波折，与岳父岳母的矛盾、家族内部的斗争，剧情紧凑，冲突激烈。</p>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">美女环绕</h3>
+                        <p class="card-desc">都市背景下的情感纠葛，高冷女总裁、清纯校花、神秘女总裁等角色，满足读者阅读期待。</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-col">
+            <h3>关于我们</h3>
+            <p style="font-size: 0.9rem; line-height: 1.8;">
+                本站致力于为读者提供最优质的小说阅读体验，收录各类经典与热门小说，包含都市、玄幻、武侠、言情等多种题材。
+            </p>
+        </div>
+        <div class="footer-col">
+            <h3>快速导航</h3>
+            <ul>
+                <li><a href="#">网站首页</a></li>
+                <li><a href="#">排行榜单</a></li>
+                <li><a href="#">全本小说</a></li>
+                <li><a href="#">作者专区</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h3>帮助中心</h3>
+            <ul>
+                <li><a href="#">阅读指南</a></li>
+                <li><a href="#">投稿须知</a></li>
+                <li><a href="#">版权声明</a></li>
+                <li><a href="#">联系客服</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>&copy; 2023 花都神医小说阅读网 版权所有. 仅供学习交流使用.</p>
+    </div>
+</footer>
+
+</body>
+</html>
